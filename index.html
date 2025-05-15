@@ -50,9 +50,8 @@
     </div>
   </div>
 
-  <!-- Firebase Compat SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 <script>
   const firebaseConfig = {
     apiKey: "AIzaSyAY6BsJ1LWpp00hMqsis_KHoOH5rKic3Os",
@@ -63,9 +62,11 @@
     messagingSenderId: "57858097218",
     appId: "1:57858097218:web:c28b4d3e66c577a307eddb"
   };
+
+  // Inicializar Firebase e Firestore (modo compat)
   firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+  const db = firebase.firestore(); // ← ESSA é a linha que define `db`
 </script>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
