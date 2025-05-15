@@ -1,84 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista de Compras para Casa e Construção</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Lista de Compras</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <!-- Compras de Casa -->
+    <!-- Casa -->
     <div class="list-container">
-      <h2>🛍️ Compras de casa 🛍️</h2>
+      <h2>🛍️ Compras de casa</h2>
       <div class="totais">
-        <div><strong>📋 Quantidade de Itens:</strong> <span id="quantidade-itens-casa">0</span></div>
-        <div><strong>📋 Itens Comprados:</strong> <span id="quantidade-comprados-casa">0</span></div>
-        <div><strong>💰 Gasto Estimado:</strong> R$ <span id="gasto-estimado-casa">0.00</span></div>
-        <div><strong>🪙 Total Gasto:</strong> R$ <span id="total-gasto-casa">0.00</span></div>
+        <div><strong>📋 Itens:</strong> <span id="quantidade-itens-casa">0</span></div>
+        <div><strong>✔️ Comprados:</strong> <span id="quantidade-comprados-casa">0</span></div>
+        <div><strong>💰 Estimado:</strong> R$ <span id="gasto-estimado-casa">0.00</span></div>
+        <div><strong>🪙 Gasto:</strong> R$ <span id="total-gasto-casa">0.00</span></div>
       </div>
-      <input type="text" id="item-casa" placeholder="Nome do Item" />
-      <input type="text" id="categoria-casa" placeholder="Categoria" />
-      <input type="text" id="descricao-casa" placeholder="Descrição" />
-      <input type="number" id="preco-casa" placeholder="Preço Estimado" />
-      <button onclick="adicionarItemCasa()">Adicionar Item 📥</button>
-
-      <div class="progress-container">
-        <progress id="progress-casa" value="0" max="100"></progress>
-        <span id="progress-text-casa">0% Completo</span>
-      </div>
-
-      <table id="tabela-casa">
-        <thead>
-          <tr><th>✔️</th><th>Item</th><th>Categoria</th><th>Descrição</th><th>Preço</th><th>Ações</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-
-      <div class="comprados-container">
-        <h2>✅ Itens Comprados - Casa ✅</h2>
-        <table id="tabela-comprados-casa">
-          <thead><tr><th>Item</th><th>Categoria</th><th>Descrição</th><th>Preço</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
+      <input id="item-casa" placeholder="Item">
+      <input id="categoria-casa" placeholder="Categoria">
+      <input id="descricao-casa" placeholder="Descrição">
+      <input id="preco-casa" type="number" placeholder="Preço">
+      <button onclick="adicionar('casa')">Adicionar Casa</button>
+      <progress id="progress-casa" value="0" max="100"></progress>
+      <span id="progress-text-casa">0%</span>
+      <table id="tabela-casa"><thead>
+        <tr><th>✔️</th><th>Item</th><th>Cat.</th><th>Desc.</th><th>Preço</th><th>⚙️</th></tr>
+      </thead><tbody></tbody></table>
     </div>
-
-    <!-- Compras de Construção -->
+    <!-- Construção -->
     <div class="list-container">
-      <h2>🚧 Itens para Construção 🚧</h2>
+      <h2>🚧 Compras de construção</h2>
       <div class="totais">
-        <div><strong>📋 Quantidade de Itens:</strong> <span id="quantidade-itens-construcao">0</span></div>
-        <div><strong>📋 Itens Comprados:</strong> <span id="quantidade-comprados-construcao">0</span></div>
-        <div><strong>💰 Gasto Estimado:</strong> R$ <span id="gasto-estimado-construcao">0.00</span></div>
-        <div><strong>🪙 Total Gasto:</strong> R$ <span id="total-gasto-construcao">0.00</span></div>
+        <div><strong>📋 Itens:</strong> <span id="quantidade-itens-construcao">0</span></div>
+        <div><strong>✔️ Comprados:</strong> <span id="quantidade-comprados-construcao">0</span></div>
+        <div><strong>💰 Estimado:</strong> R$ <span id="gasto-estimado-construcao">0.00</span></div>
+        <div><strong>🪙 Gasto:</strong> R$ <span id="total-gasto-construcao">0.00</span></div>
       </div>
-      <input type="text" id="item-construcao" placeholder="Nome do Item" />
-      <input type="text" id="categoria-construcao" placeholder="Categoria" />
-      <input type="text" id="descricao-construcao" placeholder="Descrição" />
-      <input type="number" id="preco-construcao" placeholder="Preço Estimado" />
-      <button onclick="adicionarItemConstrucao()">Adicionar Item 📥</button>
-
-      <div class="progress-container">
-        <progress id="progress-construcao" value="0" max="100"></progress>
-        <span id="progress-text-construcao">0% Completo</span>
-      </div>
-
-      <table id="tabela-construcao">
-        <thead><tr><th>✔️</th><th>Item</th><th>Categoria</th><th>Descrição</th><th>Preço</th><th>Ações</th></tr></thead>
-        <tbody></tbody>
-      </table>
-
-      <div class="comprados-container">
-        <h2>✅ Itens Comprados - Construção ✅</h2>
-        <table id="tabela-comprados-construcao">
-          <thead><tr><th>Item</th><th>Categoria</th><th>Descrição</th><th>Preço</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
+      <input id="item-construcao" placeholder="Item">
+      <input id="categoria-construcao" placeholder="Categoria">
+      <input id="descricao-construcao" placeholder="Descrição">
+      <input id="preco-construcao" type="number" placeholder="Preço">
+      <button onclick="adicionar('construcao')">Adicionar Construção</button>
+      <progress id="progress-construcao" value="0" max="100"></progress>
+      <span id="progress-text-construcao">0%</span>
+      <table id="tabela-construcao"><thead>
+        <tr><th>✔️</th><th>Item</th><th>Cat.</th><th>Desc.</th><th>Preço</th><th>⚙️</th></tr>
+      </thead><tbody></tbody></table>
     </div>
   </div>
 
+  <!-- Firebase Compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script>
+    // 🔑 Cole aqui o seu firebaseConfig do Console
+    const firebaseConfig = {
+      apiKey: "...",
+      authDomain: "...firebaseapp.com",
+      projectId: "...",
+      storageBucket: "...appspot.com",
+      messagingSenderId: "...",
+      appId: "..."
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
