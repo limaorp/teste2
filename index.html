@@ -52,21 +52,20 @@
 
   <!-- Firebase Compat SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-  <script>
-    // 🔑 Cole aqui o seu firebaseConfig do Console
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+<script>
   const firebaseConfig = {
     apiKey: "AIzaSyAY6BsJ1LWpp00hMqsis_KHoOH5rKic3Os",
     authDomain: "casateste-c5bec.firebaseapp.com",
     databaseURL: "https://casateste-c5bec-default-rtdb.firebaseio.com",
     projectId: "casateste-c5bec",
-    storageBucket: "casateste-c5bec.firebasestorage.app",
+    storageBucket: "casateste-c5bec.appspot.com",
     messagingSenderId: "57858097218",
     appId: "1:57858097218:web:c28b4d3e66c577a307eddb"
   };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+</script>
   <script src="script.js"></script>
 </body>
 </html>
